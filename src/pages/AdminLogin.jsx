@@ -31,7 +31,7 @@ function AdminLogin() {
     }
 
     try {
-      const response = await axios.post('http://localhost:1014/api/admin/login', { phone, password });
+      const response = await axios.post('http://3.93.143.88:1014/api/admin/login', { phone, password });
       if (response.status === 200) {
         setIsOtpSent(true);
         const generatedOtp = Math.floor(100000 + Math.random() * 900000).toString();
