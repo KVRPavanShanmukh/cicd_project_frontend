@@ -101,7 +101,7 @@ function AddUsers({ onAdd }) {
     };
 
     try {
-      const response = await axios.post('http://localhost:1014/api/auth/signup', newUser);
+      const response = await axios.post('http://3.93.143.88:1014/api/auth/signup', newUser);
       onAdd(response.data);
       setSuccessMessage('User added successfully!');
       setTimeout(() => {
