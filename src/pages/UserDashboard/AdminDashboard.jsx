@@ -213,7 +213,7 @@ function EditUser({ users, onUpdate }) {
     const updatedUser = { name, email, mobile: mobileState, gender, dob, password };
 
     try {
-      const response = await axios.put(`http://13.60.15.161:1014/api/auth/users/${mobile}`, updatedUser);
+      const response = await axios.put(`http://13.60.21.209:1014/api/auth/users/${mobile}`, updatedUser);
       onUpdate(response.data);
       setSuccessMessage('User updated successfully!');
       setTimeout(() => {
@@ -279,7 +279,7 @@ function AdminDashboard() {
       setLoading(true);
       setError('');
       try {
-        const response = await axios.get('http://13.60.15.161:1014/api/auth/getAllUsers');
+        const response = await axios.get('http://13.60.21.209:1014/api/auth/getAllUsers');
         setUsers(response.data);
       } catch (err) {
         setError('Failed to fetch users. Please try again.');
