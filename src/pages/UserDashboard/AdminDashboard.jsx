@@ -101,7 +101,7 @@ function AddUsers({ onAdd }) {
     };
 
     try {
-      const response = await axios.post('http://13.60.21.209:1014/api/auth/signup', newUser);
+      const response = await axios.post('http://51.21.190.86:1014/api/auth/signup', newUser);
       onAdd(response.data);
       setSuccessMessage('User added successfully!');
       setTimeout(() => {
