@@ -45,7 +45,7 @@ function Signup({ setUser }) {
     if (age < 18) return setError('You must be 18 or older to register');
 
     try {
-      const response = await axios.post('http://13.60.15.161:1014/api/auth/signup', {
+      const response = await axios.post('http://13.60.21.209:1014/api/auth/signup', {
         ...form,
         age,
       });
