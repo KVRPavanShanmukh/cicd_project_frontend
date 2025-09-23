@@ -213,7 +213,7 @@ function EditUser({ users, onUpdate }) {
     const updatedUser = { name, email, mobile: mobileState, gender, dob, password };
 
     try {
-      const response = await axios.put(`http://localhost:1014/api/auth/users/${mobile}`, updatedUser);
+      const response = await axios.put(`http://13.60.15.161:1014/api/auth/users/${mobile}`, updatedUser);
       onUpdate(response.data);
       setSuccessMessage('User updated successfully!');
       setTimeout(() => {
@@ -279,7 +279,7 @@ function AdminDashboard() {
       setLoading(true);
       setError('');
       try {
-        const response = await axios.get('http://localhost:1014/api/auth/getAllUsers');
+        const response = await axios.get('http://13.60.15.161:1014/api/auth/getAllUsers');
         setUsers(response.data);
       } catch (err) {
         setError('Failed to fetch users. Please try again.');
@@ -302,7 +302,7 @@ function AdminDashboard() {
   const handleDeleteUser = async userMobile => {
     if (window.confirm('Are you sure you want to delete this user?')) {
       try {
-        await axios.delete(`http://localhost:1014/api/auth/users/${userMobile}`);
+        await axios.delete(`http://13.60.15.161:1014/api/auth/users/${userMobile}`);
         setUsers(users.filter(user => user.mobile !== userMobile));
       } catch (err) {
         setError('Failed to delete user. Please try again.');
