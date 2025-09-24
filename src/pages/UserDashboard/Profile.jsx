@@ -22,7 +22,7 @@ function Profile({ user }) {
     }
 
     // ✅ Fetch fresh user data from backend using mobile
-    fetch(`http://51.21.190.86:1014/api/auth/users/${currentUser.mobile}`)
+    fetch(`http://13.220.211.135:1014/api/auth/users/${currentUser.mobile}`)
       .then((res) => {
         if (!res.ok) throw new Error("Failed to fetch user profile");
         return res.json();
