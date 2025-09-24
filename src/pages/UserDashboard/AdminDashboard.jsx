@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Routes, Route, Link, useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
+
 //we need to change the ip addr 3 times here
+
 // DisplayUsers component
 function DisplayUsers({ users, onDelete }) {
   return (
@@ -101,7 +103,7 @@ function AddUsers({ onAdd }) {
     };
 
     try {
-      const response = await axios.post('http://51.21.190.86:1014/api/auth/signup', newUser);
+      const response = await axios.post('http://13.220.211.135:1014/api/auth/signup', newUser);
       onAdd(response.data);
       setSuccessMessage('User added successfully!');
       setTimeout(() => {
@@ -279,7 +281,7 @@ function AdminDashboard() {
       setLoading(true);
       setError('');
       try {
-        const response = await axios.get('http://51.21.190.86:1014/api/auth/getAllUsers');
+        const response = await axios.get('http://13.220.211.135:1014/api/auth/getAllUsers');
         setUsers(response.data);
       } catch (err) {
         setError('Failed to fetch users. Please try again.');
@@ -302,7 +304,7 @@ function AdminDashboard() {
   const handleDeleteUser = async userMobile => {
     if (window.confirm('Are you sure you want to delete this user?')) {
       try {
-        await axios.delete(`http://51.21.190.86:1014/api/auth/users/${userMobile}`);
+        await axios.delete(`http://13.220.211.135:1014/api/auth/users/${userMobile}`);
         setUsers(users.filter(user => user.mobile !== userMobile));
       } catch (err) {
         setError('Failed to delete user. Please try again.');
